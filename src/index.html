@@ -1,0 +1,59 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<script src = "../jquery-3.7.1.js"></script>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel = "cesiumStyle" href="cesium/Source/Widgets/widgets.css">
+    <link rel = "mainStyle" href="../src/css/main.css">
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/"
+          }
+        }
+    </script>
+    <title>OreCzml</title>
+</head>
+
+<body>
+
+    <div class="all-objects" id ="all-objects">All objects</div>
+
+    <div class="all-objects-unfold">
+        <div class="objects-tabbuttongroup" id="objects-tabbutongroup">
+            <div class="objects-tabbutton satellite-group" id ="satellite-group" onclick="function displaySatelliteList() {
+                document.getElementById('satellite-content').style.display ='block';
+                document.getElementById('ground-station-content').style.display ='none';
+                document.getElementById('bodies-content').style.display ='none';
+                    } displaySatelliteList();">Satellites
+            </div>
+
+            <div class="objects-tabbutton ground-station-group" id ="ground-station-group" onclick="function displayGroundStations() {
+                document.getElementById('satellite-content').style.display ='none';
+                document.getElementById('ground-station-content').style.display ='block';
+                document.getElementById('bodies-content').style.display ='none';
+                    } displayGroundStations();">Ground Stations
+            </div>
+
+            <div class="objects-tabbutton bodies-group" id ="bodies-group" onclick="function displayBodies() {
+                document.getElementById('satellite-content').style.display ='none';
+                document.getElementById('ground-station-content').style.display ='none';
+                document.getElementById('bodies-content').style.display ='block';
+                    } displayBodies();">Bodies
+            </div>
+        </div>
+
+        <div class="objects-tabgroup" id = "objects-tabgroup">
+            <div class="objects-tabcontent" id="satellite-content"></div>
+            <div class="objects-tabcontent" id="ground-station-content"></div>
+            <div class="objects-tabcontent" id="bodies-content"></div>
+        </div>
+    </div>
+
+    <div id="cesiumContainer"></div>
+</body>
+</html>
