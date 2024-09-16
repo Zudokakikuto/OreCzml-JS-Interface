@@ -1,0 +1,14 @@
+# OreCzml JavaScript Interface
+
+<p align="center">
+  <img src=https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/src/iconOreCzml%20JS.png?raw=true alt=""/>
+</p>
+
+This project is the continuity of OreCzml available [here](https://github.com/Zudokakikuto/OreCZML), please make sure to check it !
+
+The OreCzml JS interface aims at giving more features to the Cesium environment. Those can be listed as below :
+* ![Lights](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/light.png?raw=true) A button to display the day/night cycle light on earth. 
+* ![ITRF](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/ITRF.png?raw=true) A button to switch the camera between the inertial frame of the earth or a non-rotational earth frame
+* ![Objects](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/objects.png?raw=true) If a Czml file is loaded, a button to display all the satellites/ground station/bodies is available. This button will display a list of all the objects grouped by nature. Then the user can click the ID of the object to zoom the camera to it.
+* ![NavBall](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/navball.png?raw=true) A NavBall is available and can be switch off/on with a button. (Under Development) This navball adapt to the object targeted, to represent what is the attitude of the object in the ITR frame.
+
