@@ -1,5 +1,5 @@
 import * as Cesium from "cesium";
-import {Ion, Math, Quaternion, Viewer} from "cesium";
+import {HeadingPitchRoll, Ion, Math, Quaternion, Viewer} from "cesium";
 import "cesium/Widgets/widgets.css";
 import "./css/main.css";
 import * as MATH from "mathjs";
@@ -59,10 +59,6 @@ function createNavBall() {
 
   viewer.clock.onTick.addEventListener(function() {
 
-    console.log("x direction", viewer.camera.directionWC.x);
-    console.log("y direction", viewer.camera.directionWC.y);
-    console.log("z direction", viewer.camera.directionWC.z);
-
     const directionX = viewer.camera.directionWC.x;
     const directionY = viewer.camera.directionWC.y;
     const directionZ = viewer.camera.directionWC.z;
@@ -76,29 +72,63 @@ function createNavBall() {
     const listOfRadForZ = [];
     const listOfRadForX = [];
     for (let j = 0; j < 1000; j++) {
-      const currentNumberPi = Math.PI/j;
-      const currentNumberTwoPi = (2*Math.PI)/j
+      const currentNumberPi = Math.PI / j;
+      const currentNumberTwoPi = (2 * Math.PI) / j
       listOfRadForZ.push(currentNumberPi);
       listOfRadForX.push(currentNumberTwoPi);
     }
 
-    console.log("cosX : ", cosX, " sin X : ", sinX);
-    console.log("cosY : ", cosY, " sin Y : ", sinY);
-    console.log("cosZ : ", cosZ);
-
     let xCamera, yCamera, zCamera;
+    let pitchCamera, rollCamera, headingCamera;
+    let pitchDefault, rollDefault, headingDefault;
 
     xCamera = viewer.camera.position.x;
     yCamera = viewer.camera.position.y;
     zCamera = viewer.camera.position.z;
 
+    pitchCamera = viewer.camera.pitch;
+    rollCamera = viewer.camera.roll;
+    headingCamera = viewer.camera.heading;
+
+    pitchDefault = -Math.PI/2;
+    rollDefault = 0;
+    headingDefault = 2*Math.PI;
+
+    let deltaPitch, deltaRoll, deltaHeading;
+
+    deltaPitch = pitchDefault - pitchCamera;
+    deltaRoll = rollDefault - rollCamera;
+    deltaHeading = headingDefault - headingCamera;
+
+    // console.log("Heading : ", headingCamera);
+    // console.log("Pitch : ", pitchCamera);
+    // console.log("Roll : ", rollCamera);
+
+    console.log("Heading delta : ", deltaHeading);
+    console.log("Pitch delta: ", deltaPitch);
+    console.log("Roll delta: ", deltaRoll);    //
+    // let headingPitchRoll;
+    // headingPitchRoll = new HeadingPitchRoll(headingCamera, pitchCamera, rollCamera);
+
+    let zoom, zeroZoom, deltaZoom;
+    zoom = viewer.camera.getMagnitude();
+    zeroZoom = 34642019.37981909;
+    deltaZoom = (zeroZoom - zoom) / zeroZoom;
+    // console.log("Zoom : ", zoom);
+    // console.log("Delta Zoom : ", deltaZoom);
+
     let rSpherical, thetaSpherical, phiSpherical;
-    rSpherical = MATH.sqrt(xCamera*xCamera + yCamera*yCamera + zCamera*zCamera);
-    thetaSpherical = MATH.acos(zCamera/rSpherical);
+    rSpherical = MATH.sqrt(xCamera * xCamera + yCamera * yCamera + zCamera * zCamera);
+    thetaSpherical = MATH.acos(zCamera / rSpherical);
     phiSpherical = MATH.atan2(yCamera, xCamera);
 
     let rSphericalNavBall, thetaSphericalNavBall, phiSphericalNavBall;
-    rSphericalNavBall = rSpherical - 3;
+    if (deltaZoom > 0) {
+      rSphericalNavBall = rSpherical - 3 + deltaZoom*2.5;
+    }
+    else {
+      rSphericalNavBall = rSpherical - 3 + deltaZoom*3;
+    }
     thetaSphericalNavBall = thetaSpherical + 18e-9;
     phiSphericalNavBall = phiSpherical;
 
@@ -107,7 +137,12 @@ function createNavBall() {
     yNavBall = rSphericalNavBall * MATH.sin(thetaSphericalNavBall) * MATH.sin(phiSphericalNavBall);
     zNavBall = rSphericalNavBall * MATH.cos(thetaSphericalNavBall);
 
-    navBallEntity.position = new Cesium.Cartesian3(xNavBall, yNavBall, zNavBall);
+
+
+    let position
+    position = new Cesium.Cartesian3(xNavBall, yNavBall, zNavBall);
+    navBallEntity.position = position;
+    // navBallEntity.orientation = Cesium.Transforms.headingPitchRollQuaternion(position, headingPitchRoll);
   });
 
   const navBallEntity = viewer.entities.add({
@@ -117,9 +152,9 @@ function createNavBall() {
     show: true,
     model: {
       uri: "./navball.glb",
-      minimumPixelSize: 100,
-      maximumScale: 1,
-      scale: 0.2
+      minimumPixelSize: 200,
+      maximumScale: 10000,
+      scale: 0.15
     },
   });
   return navBallEntity
@@ -150,6 +185,7 @@ viewer.dataSources.add(czmlDataSource).then(ds => {
       liGroundStation.innerText = currentId;
       liGroundStation.addEventListener("click", (e) => {
         const didFly = viewer.flyTo(currentElement);});
+
       groundStationGroup.appendChild(liGroundStation);
     }
 
