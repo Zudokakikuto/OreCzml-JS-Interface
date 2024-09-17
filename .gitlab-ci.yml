@@ -6,9 +6,6 @@ include:
 # variables
 variables:
   DOCKER_HADOLINT_DISABLED: "true"
-  DOCKER_SNAPSHOT_IMAGE: vcucchie/oreczml-js-interface
-  DOCKER_RELEASE_IMAGE: vcucchie/oreczml-js-interface
-  DOCKER_PROD_PUBLISH_STRATEGY: none
 
 
 # your pipeline stages
