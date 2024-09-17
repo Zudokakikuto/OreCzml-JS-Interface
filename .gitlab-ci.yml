@@ -1,0 +1,22 @@
+# included templates
+include:
+  # Docker template
+  - remote: "https://gitlab.com/to-be-continuous/docker/-/raw/5.13/templates/gitlab-ci-docker.yml"
+
+# variables
+variables:
+  DOCKER_HADOLINT_DISABLED: "true"
+
+
+# your pipeline stages
+stages:
+  - build
+  - test
+  - package-build
+  - package-test
+  - infra
+  - deploy
+  - acceptance
+  - publish
+  - infra-prod
+  - production
