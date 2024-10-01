@@ -21,7 +21,6 @@ module.exports = {
     toUrlUndefined: true,
   },
   resolve: {
-    extensions: [".wasm", ".ts", ".tsx", ".mjs", ".cjs", ".json"],
     alias: {
       cesium: path.resolve(__dirname, cesiumSource),
     },
