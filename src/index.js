@@ -189,7 +189,7 @@ viewer.dataSources.add(czmlDataSource).then(ds => {
       groundStationGroup.appendChild(liGroundStation);
     }
 
-    if (currentId.toString().includes("BODY") && (!strId.includes("ABSTRACT_POINT_ON"))) {
+    if (currentId.toString().includes("BODY") && (!strId.includes("POINT_ON"))) {
       const liBodies = document.createElement('li');
       liBodies.innerText = currentId;
       liBodies.addEventListener("click", (e) => {
