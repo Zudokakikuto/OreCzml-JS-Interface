@@ -58,5 +58,16 @@ It should resolve the vulnerabilities of the code.
 
 Now that the dependencies are installed, you can run `npm run build`. To check that the version of the interface that you have correctly build, if not open an issue and put the error message you got.
 
-And finally you cna use the command `npm start` to launch the local server to
+And finally you can use the command `npm start` to launch the local server to
 
+**To load your own Czml file, modify the 'Output.czml' file in the 'public' folder !**
+
+# Known errors
+
+```
+Request has failed. Status Code: 404 
+handleError@webpack://cesium test/./node_modules/webpack-dev-server/client/overlay.js?:252:58 
+createOverlay/<@webpack://cesiumtest/./node_modules/webpack-dev-server/client/overlay.js?:275:18
+```
+
+This error is because there is no Output.czml in the public folder.
