@@ -100,22 +100,10 @@ function createNavBall() {
     deltaRoll = rollDefault - rollCamera;
     deltaHeading = headingDefault - headingCamera;
 
-    // console.log("Heading : ", headingCamera);
-    // console.log("Pitch : ", pitchCamera);
-    // console.log("Roll : ", rollCamera);
-
-    console.log("Heading delta : ", deltaHeading);
-    console.log("Pitch delta: ", deltaPitch);
-    console.log("Roll delta: ", deltaRoll);    //
-    // let headingPitchRoll;
-    // headingPitchRoll = new HeadingPitchRoll(headingCamera, pitchCamera, rollCamera);
-
     let zoom, zeroZoom, deltaZoom;
     zoom = viewer.camera.getMagnitude();
     zeroZoom = 34642019.37981909;
     deltaZoom = (zeroZoom - zoom) / zeroZoom;
-    // console.log("Zoom : ", zoom);
-    // console.log("Delta Zoom : ", deltaZoom);
 
     let rSpherical, thetaSpherical, phiSpherical;
     rSpherical = MATH.sqrt(xCamera * xCamera + yCamera * yCamera + zCamera * zCamera);
@@ -137,8 +125,6 @@ function createNavBall() {
     yNavBall = rSphericalNavBall * MATH.sin(thetaSphericalNavBall) * MATH.sin(phiSphericalNavBall);
     zNavBall = rSphericalNavBall * MATH.cos(thetaSphericalNavBall);
 
-
-
     let position
     position = new Cesium.Cartesian3(xNavBall, yNavBall, zNavBall);
     navBallEntity.position = position;
@@ -149,7 +135,7 @@ function createNavBall() {
     id: "navBall",
     position: position,
     orientation: orientation,
-    show: true,
+    show: false,
     model: {
       uri: "./navball.glb",
       minimumPixelSize: 200,
