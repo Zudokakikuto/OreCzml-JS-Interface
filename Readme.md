@@ -22,12 +22,13 @@ The OreCzml JS interface aims at giving more features to the Cesium environment.
 * ![Objects](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/objects.png?raw=true) If a Czml file is loaded, a button to display all the satellites/ground station/bodies is available. This button will display a list of all the objects grouped by nature. Then the user can click the ID of the object to zoom the camera to it.
 
 <p align="center">
-  <img src= alt=""/>
+  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3Q1enNqaG43dzZuc3N1MjZuYXkwbHNmc2Jzcnd3bmNhMm91NmFlcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GZBEEgBrCEgeq8fNAM/giphy-downsized-large.gif alt=""/>
 </p>
-* ![NavBall](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/navball.png?raw=true) A NavBall is available and can be switch off/on with a button. (Under Development) This navball adapt to the object targeted, to represent what is the attitude of the object in the ITR frame.
+
+![NavBall](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/navball.png?raw=true) A NavBall is available and can be switch off/on with a button. (Under Development) This navball adapt to the object targeted, to represent what is the attitude of the object in the ITR frame.
 
 <p align="center">
-  <img src= alt=""/>
+  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmZ6NzEzNWhicTI3eGxsd29vOTNyNHVnaHhhN3FmOHJqenVjNDE2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jiuKDpTHQFlEjauPnh/giphy-downsized-large.gif alt=""/>
 </p>
 
 # How to install
