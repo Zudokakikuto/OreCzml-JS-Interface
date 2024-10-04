@@ -7,10 +7,28 @@
 This project is the continuity of OreCzml available [here](https://github.com/Zudokakikuto/OreCZML), please make sure to check it !
 
 The OreCzml JS interface aims at giving more features to the Cesium environment. Those can be listed as below :
-* ![Lights](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/light.png?raw=true) A button to display the day/night cycle light on earth. 
+* ![Lights](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/light.png?raw=true) A button to display the day/night cycle light on earth.
+
+<p align="center">
+  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExejZ6YWc1aThxbnFhcnNhNTlpcG5vZm15aGVjamtqazI5ODNzOGxiYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V5pbQw52tl8z3SFN9V/giphy-downsized-large.gif alt=""/>
+</p>
+
 * ![ITRF](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/ITRF.png?raw=true) A button to switch the camera between the inertial frame of the earth or a non-rotational earth frame
+
+<p align="center">
+  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWd4enNqZHd0N3ZlMXNuMHE4ZXY0ZWpxbzVsd2xjYnMzdWpidWRhaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0I4KJKAEprhAOFqEE9/giphy.gif alt=""/>
+</p>
+
 * ![Objects](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/objects.png?raw=true) If a Czml file is loaded, a button to display all the satellites/ground station/bodies is available. This button will display a list of all the objects grouped by nature. Then the user can click the ID of the object to zoom the camera to it.
+
+<p align="center">
+  <img src= alt=""/>
+</p>
 * ![NavBall](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/navball.png?raw=true) A NavBall is available and can be switch off/on with a button. (Under Development) This navball adapt to the object targeted, to represent what is the attitude of the object in the ITR frame.
+
+<p align="center">
+  <img src= alt=""/>
+</p>
 
 # How to install
 
