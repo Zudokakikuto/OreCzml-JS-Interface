@@ -98,26 +98,25 @@ button.cesium-infoBox-camera {
   margin: 1px;
   padding: 5px;
   font-size: 1.25em!important;
-  background-color: rgba(255,255,255,1.00);
-  border: 1px solid rgba(255,0,0,1.00);
-  color: rgba(255,197,100,1.00);
+  background-color: rgb(44, 127, 135, 0.5);
+  border: 1px solid rgb(35, 205, 221);
+  color: rgb(255, 255, 255, 0.5);
   border-radius: 1px;
   cursor: pointer;
   transition: 0.4s;
 }
 .all-objects:hover {
   border: 1px solid rgba(0,145,255,1.00);
-  color: rgba(255,197,110,1.00);
+  background-color: rgb(44, 127, 135, 1.00);
+  color: rgb(255, 255, 255, 1.00);
 }
 .all-objects.active {
-  background-color: rgba(255,100,50,1.00);
-  border: 1px solid rgba(0,145,255,1.00);
-  color: rgba(255,255,255,1.00);
+  background-color: rgb(66, 186, 195);
+  color: rgb(255, 255, 255, 1.00);
 }
 .all-objects.active:hover {
-  background-color: rgba(255,100,50,0.80);
+  background-color: rgb(35, 205, 221);
   border: 1px solid rgba(55,175,75,0.00);
-  color: rgba(255,255,255,1.00);
 }
 .all-objects-unfold {
   max-height: 0;
@@ -130,7 +129,7 @@ button.cesium-infoBox-camera {
 }
 .objects-tabbutton {
   display: none;
-  background-color: rgba(255,197,110,1.00);
+  background-color: rgb(45, 55, 126);
   color: rgba(255,255,255,1.00);
   padding: 4px;
   font-size: 1.00em;
@@ -139,7 +138,7 @@ button.cesium-infoBox-camera {
   cursor: pointer;
 }
 .objects-tabbutton:hover {
-  background-color: rgba(255,100,50,1.00);
+  background-color: rgb(68, 83, 188);
 }
 .objects-tabgroup {
   display: none;
@@ -147,6 +146,7 @@ button.cesium-infoBox-camera {
   width: 100%;
 }
 .objects-tabcontent {
+  color: rgba(255,255,255,1.00);
   display: none;
   width: 100%;
   padding: 0 0 4px 0;
