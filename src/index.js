@@ -5,7 +5,6 @@ import "./css/main.css";
 import * as MATH from "mathjs";
 
 // Your access token can be found at: https://cesium.com/ion/tokens.
-//Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxYzVmYzgyNy1mYTAyLTRlYTktOTk0Ni1kNmEwNmNkOGY0MDQiLCJpZCI6MjIwNTk2LCJpYXQiOjE3MTc2NzgwNzR9.OxDy9eWiX8vyBXdOcgjSyfMGYfll2sa-DBSBhH-uais";
 Ion.defaultAccessToken = "";
 
 let viewer;
