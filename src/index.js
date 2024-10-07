@@ -5,9 +5,25 @@ import "./css/main.css";
 import * as MATH from "mathjs";
 
 // Your access token can be found at: https://cesium.com/ion/tokens.
-Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxYzVmYzgyNy1mYTAyLTRlYTktOTk0Ni1kNmEwNmNkOGY0MDQiLCJpZCI6MjIwNTk2LCJpYXQiOjE3MTc2NzgwNzR9.OxDy9eWiX8vyBXdOcgjSyfMGYfll2sa-DBSBhH-uais";
+//Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxYzVmYzgyNy1mYTAyLTRlYTktOTk0Ni1kNmEwNmNkOGY0MDQiLCJpZCI6MjIwNTk2LCJpYXQiOjE3MTc2NzgwNzR9.OxDy9eWiX8vyBXdOcgjSyfMGYfll2sa-DBSBhH-uais";
+Ion.defaultAccessToken = "";
+
+let viewer;
+
+if (Ion.defaultAccessToken === ""){
+  viewer = new Cesium.Viewer("cesiumContainer", {
+    baseLayer: Cesium.ImageryLayer.fromProviderAsync(
+        Cesium.TileMapServiceImageryProvider.fromUrl(
+            Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII"),),),
+    baseLayerPicker: false,
+    geocoder: false,
+  });
+}
+else {
+  viewer = new Viewer("cesiumContainer");
+}
+
 // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
-const viewer = new Viewer("cesiumContainer");
 const iframe = document.getElementsByClassName("cesium-infoBox-iframe")[0];
 
 if (iframe) {
