@@ -10,25 +10,25 @@ The OreCzml JS interface aims at giving more features to the Cesium environment.
 * ![Lights](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/light.png?raw=true) A button to display the day/night cycle light on earth.
 
 <p align="center">
-  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExejZ6YWc1aThxbnFhcnNhNTlpcG5vZm15aGVjamtqazI5ODNzOGxiYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V5pbQw52tl8z3SFN9V/giphy-downsized-large.gif alt=""/>
+  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMndrZDY0Ym8xcnp1ZzJqb2VkZmdjOWlmZnQ3cnc0YXl5a3pmeDRhZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Uen9mKqcFoRR82xnea/giphy-downsized-large.gif alt=""/>
 </p>
 
 * ![ITRF](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/ITRF.png?raw=true) A button to switch the camera between the inertial frame of the earth or a non-rotational earth frame
 
 <p align="center">
-  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWd4enNqZHd0N3ZlMXNuMHE4ZXY0ZWpxbzVsd2xjYnMzdWpidWRhaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0I4KJKAEprhAOFqEE9/giphy.gif alt=""/>
+  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnR1bHg4eHdyd25uMXdrZ255a290MDF6Mnk1amNoaGlzNmk5ZXkzcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/W5yyhpGds6JphALMRI/giphy-downsized-large.gif alt=""/>
 </p>
 
 * ![Objects](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/objects.png?raw=true) If a Czml file is loaded, a button to display all the satellites/ground station/bodies is available. This button will display a list of all the objects grouped by nature. Then the user can click the ID of the object to zoom the camera to it.
 
 <p align="center">
-  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3Q1enNqaG43dzZuc3N1MjZuYXkwbHNmc2Jzcnd3bmNhMm91NmFlcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GZBEEgBrCEgeq8fNAM/giphy-downsized-large.gif alt=""/>
+  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMm5xYzdzMGpkOWZrbHdtdzlkcWJ5MWVlcW9uZDV0aDJ6OHdhZGd2aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MPKPIBCY4PoMq1JOUY/giphy.gif alt=""/>
 </p>
 
 ![NavBall](https://github.com/Zudokakikuto/OreCzml-JS-Interface/blob/main/public/buttons-display/navball.png?raw=true) A NavBall is available and can be switch off/on with a button. (Under Development) This navball adapt to the object targeted, to represent what is the attitude of the object in the ITR frame.
 
 <p align="center">
-  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmZ6NzEzNWhicTI3eGxsd29vOTNyNHVnaHhhN3FmOHJqenVjNDE2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jiuKDpTHQFlEjauPnh/giphy-downsized-large.gif alt=""/>
+  <img src=https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3Jtd2d3Z2E2MXY2eHN3dGtqM3NwNmJweHR2MDlqZm0weGJpaXNjZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/48JT6WKUMAEZkBfRQf/giphy.gif alt=""/>
 </p>
 
 # How to install
@@ -80,6 +80,14 @@ Now that the dependencies are installed, you can run `npm run build`. To check t
 And finally you can use the command `npm start` to launch the local server to
 
 **To load your own Czml file, modify the 'Output.czml' file in the 'public' folder !**
+
+# Use your token
+
+The cesium ion token is a useful to display a precise skin of the earth. You can find one [here](https://ion.cesium.com/tokens?page=1), once you got one, you can change the line inside the `index.js`, by filling your token inside the "". 
+```javascript
+// Line to fill:
+Ion.defaultAccessToken = "";
+```
 
 # Known errors
 
